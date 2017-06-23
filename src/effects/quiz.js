@@ -1,3 +1,3 @@
-export default function startQuiz(state, raw, send, done) {
+function startQuiz(state, raw, send, done) {
     console.log("Let's do a quiz!")
 }
