@@ -7,11 +7,90 @@
   <meta name="author" content="Dan Motzenbecker">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
   <link href="app.css" rel="stylesheet" type="text/css">
+  <link href="app-busuu.css" rel="stylesheet" type="text/css">
   <title>Thing Translator</title>
 </head>
 <body>
-  <video autoplay id="video"></video>
-  <canvas id="canvas" width="640" height="640"></canvas>
-  <script src="app.js"></script>
+
+  <ui-view><layout-main><div class="main-layout">
+      <!---->
+
+      <!---->
+
+      <!----><div class="main-layout__page" ng-if="!LayoutMain.isFetching &amp;&amp; !LayoutMain.error">
+          <!----><nav-side class="main-layout__nav-side" ng-if="LayoutMain.layout.sidebar"><div class="nav-side">
+
+      <div>
+          <!-- Logo -->
+          <a ui-sref="layout.timeline" class="nav-side__logo" bs-track="DASHBOARD_HEADER_LOGO_CLICK" href="#/timeline">
+              <span class="icon">
+                  <svg>
+                      <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_logo"></use>
+                  </svg>
+              </span>
+              <!-- admin branch switch -->
+              <!---->
+          </a>
+
+          <!-- Navigation -->
+          <div>
+              <!-- BRUCE PUT STUFF HERE -->
+          </div>
+
+
+      </div>
+
+  </div>
+  </nav-side><!---->
+          <!----><div class="main-layout__content" ng-if="!LayoutMain.isFetching &amp;&amp; !LayoutMain.error">
+              <nav-top show-sidebar="LayoutMain.layout.sidebar" show-subtopbar="LayoutMain.layout.subtopbar"><div class="nav-top nav-top--sidebar nav-top--subtopbar" ng-class="{'nav-top--sidebar': $ctrl.showSidebar, 'nav-top--subtopbar': $ctrl.showSubtopbar}">
+
+      <!-- Logo -->
+      <!----><a ng-if="!$ctrl.hideDistractions" class="nav-top__item nav-top__item--logo" ui-sref="layout.timeline" bs-track="DASHBOARD_HEADER_LOGO_CLICK" href="#/timeline">
+          <span class="icon">
+              <svg>
+                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_logo"></use>
+              </svg>
+          </span>
+      </a><!---->
+      <!---->
+  </a>
+
+  </language-icon><!---->
+
+      <!-- Premium CTA -->
+      <!---->
+
+      <!-- Right side icons -->
+      <!----><div class="nav-top__right cf" ng-if="!$ctrl.hideDistractions">
+
+
+  </a>
+
+      </div><!---->
+
+  </div>
+  </nav-top>
+
+              <div id="main-layout" class="main-layout__viewport">
+                  <div class="main-layout__wrapper">
+
+                      <video autoplay id="video"></video>
+                      <canvas id="canvas" width="640" height="640"></canvas>
+                      <script src="app.js"></script>
+  </div><!---->
+          </section><!---->
+
+      </div><!---->
+
+  </div></div><!---->
+  </div>
+  </main>
+                  </div>
+              </div>
+          </div><!---->
+      </div><!---->
+  </div>
+  </layout-main></ui-view>
 </body>
 </html>

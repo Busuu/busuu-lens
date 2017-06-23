@@ -11,18 +11,6 @@ export default (state, prev, send) =>
       ontouchstart=${!state.fullscreen ? send.bind(null, 'requestFullscreen') : null}
     >
 
-      <div id="shroud"></div>
-
-      <svg
-        id="spinner"
-        class="${state.isSnapping ? 'active' : ''}"
-        width="65px"
-        height="65px"
-        viewBox="0 0 66 66"
-      >
-        <circle />
-      </svg>
-
       ${
         state.cameraError
         ? errorView()
