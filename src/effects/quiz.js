@@ -1,3 +1,3 @@
-export default function translate(state, raw, send, done) {
+export default function quiz(state, raw, send, done) {
 
 }
