@@ -16,6 +16,7 @@ var num = 0
 return num
 }
 
+
 export default function snap(state, _, send, done) {
   send('startSnap', done)
 
@@ -23,6 +24,8 @@ export default function snap(state, _, send, done) {
   const winH = window.innerHeight
   const vidW = state.video.videoWidth
   const vidH = state.video.videoHeight
+
+  var image_to_be_saved
 
   if (winW >= breakPoint) {
     const cropSize   = Math.min(winW, winH) * targetPct
@@ -76,27 +79,29 @@ export default function snap(state, _, send, done) {
       else {
         labels = body.responses[0].labelAnnotations
       }
+      // console.log(labels[0])
+
       var i = 0;
       console.log("things in local storage = " + check_local_storage())
       
       var json_row = {};
-      for (i = 0; i < JSON.stringify(labels).length; i++) {
+      json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1).replace('data:image/jpeg;base64,', '')
+      
 
-      if (JSON.stringify(labels[i]) != undefined){
-      var description = JSON.parse(JSON.stringify(labels[i]))['description']
-      var score = JSON.parse(JSON.stringify(labels[i]))['score']
-      json_row[score] = description
-
-      // console.log("I got some stuff " + JSON.parse(JSON.stringify(labels[i]))['description'])
-      // console.log("It scored at " + JSON.parse(JSON.stringify(labels[i]))['score'])
-      }
-
-      }
+      var description = JSON.parse(JSON.stringify(labels[0]))['description']
+      json_row["en"] = description
+     
+      
       var key = check_local_storage() + 1
-      console.log("setting " + key + " to " + JSON.stringify(json_row))
-      localStorage.setItem(key, JSON.stringify(json_row));
+      // console.log("setting " + key + " to " + JSON.stringify(json_row))
+      
+      // translate2(word)
+      // localStorage.setItem(key, JSON.stringify(json_row));
+      // add_to_sidebar(state.canvas.toDataURL('image/jpeg', 1), json_row[0], "is Awesome");
 
-      send('translate', labels, done)
+      var data = {"labels": labels, "key": key, "chosen": json_row}
+
+      send('translate', data, done)
       setTimeout(send.bind(null, 'endSnap', done), 200)
     }
   )

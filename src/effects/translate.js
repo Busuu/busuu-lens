@@ -77,6 +77,14 @@ const cache = {}
 
 export default function translate(state, raw, send, done) {
 
+  var key = raw["key"]
+  var chosen = raw["chosen"]
+  var raw = raw["labels"]
+
+  console.log(key)
+  console.log(chosen)
+  console.log(raw)
+
   const failureState = () => send('setLabelPair', {label: '?', translation: '?', guesses: ''}, done)
 
   if (!raw.length) {
@@ -121,6 +129,10 @@ export default function translate(state, raw, send, done) {
 
       const translation = he.decode(JSON.parse(body).data.translations[0].translatedText)
       send('setLabelPair', {label: he.decode(term), translation, guesses}, done)
+      
+   
+      chosen["ol"] = translation
+      localStorage.setItem(key, JSON.stringify(chosen))
       speak(translation, state.activeLang, speak.bind(null, term, state.targetLang))
       cache[state.activeLang][term] = translation
     }
