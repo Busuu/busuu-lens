@@ -27,6 +27,8 @@ export default function snap(state, _, send, done) {
 
   var image_to_be_saved
 
+  document.getElementById("first-time").style.visibility = "hidden";
+
   if (winW >= breakPoint) {
     const cropSize   = Math.min(winW, winH) * targetPct
     const sourceSize = (cropSize / Math.max(winW, winH)) * vidW
@@ -85,8 +87,8 @@ export default function snap(state, _, send, done) {
       console.log("things in local storage = " + check_local_storage())
       
       var json_row = {};
-      // json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1)
-      json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1).replace('data:image/jpeg;base64,', '')
+      json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1)
+      // json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1).replace('data:image/jpeg;base64,', '')
       
 
       var description = JSON.parse(JSON.stringify(labels[0]))['description']

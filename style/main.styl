@@ -82,6 +82,7 @@ body
   font-weight bold
 
 .quiz-box
+  display none !important
   width 60vw
   height 40vh
   background-color #38A9F6
@@ -94,12 +95,14 @@ body
   width 60vw !important
 
 .bottom-box
-  width 40vw !important
+  width 60vw !important
   margin auto
   margin-top 300px
 
 #quiz-pic
   float left
+  margin-left 20px
+  margin-top 20px
 
 #source_word_quiz
   float:right
@@ -108,7 +111,15 @@ body
   font-size 2.4em
 
 .distractor_answer
-  margin 10px
+-50-webkit-transition: transform 3s all;
+  font-family verdana
+  padding 30px
+  color white
+  border-radius 20px
+  background-color #2E8CCC
+  margin 20px
+  padding 10px
+  font-size 1.8em
 
 
 #intro
@@ -337,6 +348,9 @@ body
 @media (max-height 600px)
   #target
     display none
+
+.main-layout__nav-side
+  width 20vw !important
 
 
 #cam-error
