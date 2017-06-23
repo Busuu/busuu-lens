@@ -128,7 +128,9 @@ export default function translate(state, raw, send, done) {
 
 
       chosen["ol"] = translation
+
       localStorage.setItem(key, JSON.stringify(chosen))
+      add_to_sidebar( state.canvas.toDataURL('image/jpeg', 1),chosen["en"],translation );
       speak(translation, state.activeLang, speak.bind(null, term, state.targetLang))
       cache[state.activeLang][term] = translation
     }

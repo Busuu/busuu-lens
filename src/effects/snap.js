@@ -85,6 +85,7 @@ export default function snap(state, _, send, done) {
       console.log("things in local storage = " + check_local_storage())
       
       var json_row = {};
+      // json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1)
       json_row['Image'] = state.canvas.toDataURL('image/jpeg', 1).replace('data:image/jpeg;base64,', '')
       
 
