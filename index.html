@@ -46,46 +46,24 @@
 
   </div>
   </nav-side><!---->
-          <!----><div class="main-layout__content" ng-if="!LayoutMain.isFetching &amp;&amp; !LayoutMain.error">
-              <nav-top show-sidebar="LayoutMain.layout.sidebar" show-subtopbar="LayoutMain.layout.subtopbar"><div class="nav-top nav-top--sidebar nav-top--subtopbar" ng-class="{'nav-top--sidebar': $ctrl.showSidebar, 'nav-top--subtopbar': $ctrl.showSubtopbar}">
+  <div class="main-layout__content" ng-if="!LayoutMain.isFetching &amp;&amp; !LayoutMain.error">
+  <nav-top show-sidebar="LayoutMain.layout.sidebar" show-subtopbar="LayoutMain.layout.subtopbar"><div class="nav-top nav-top--sidebar nav-top--subtopbar" ng-class="{'nav-top--sidebar': $ctrl.showSidebar, 'nav-top--subtopbar': $ctrl.showSubtopbar}">
 
-      <!-- Logo -->
-      <!----><a ng-if="!$ctrl.hideDistractions" class="nav-top__item nav-top__item--logo" ui-sref="layout.timeline" bs-track="DASHBOARD_HEADER_LOGO_CLICK" href="#/timeline">
-          <span class="icon">
-              <svg>
-                  <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon_logo"></use>
-              </svg>
-          </span>
-      </a><!---->
-      <!---->
-  </a>
-
-  </language-icon><!---->
-
-      <!-- Premium CTA -->
-      <!---->
-
-      <!-- Right side icons -->
-      <!----><div class="nav-top__right cf" ng-if="!$ctrl.hideDistractions">
-
-
-  </a>
-
-      </div><!---->
-
+  <div class="nav-top__right cf">
+    <div id="translation-placeholder">Placeholder place</div>
+  </div>
   </div>
   </nav-top>
 
-              <div id="main-layout" class="main-layout__viewport">
-                  <div class="main-layout__wrapper">
-
-                      <video autoplay id="video"></video>
-                      <canvas id="canvas" width="640" height="640"></canvas>
-                      <script src="app.js"></script>
-  </div><!---->
-          </section><!---->
-
+  <div id="main-layout" class="main-layout__viewport">
+      <div class="main-layout__wrapper">
+        <video autoplay id="video"></video>
+        <canvas id="canvas" width="640" height="640"></canvas>
+        <script src="app.js"></script>
       </div><!---->
+  </section><!---->
+
+  </div><!---->
 
   </div></div><!---->
   </div>

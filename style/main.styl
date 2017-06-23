@@ -74,11 +74,12 @@ body
   ul
     position absolute
     top 50%
-    left 0
+    left 40px
     right 0
     list-style none
     text-align center
     transform translateY(-50%)
+    margin-left 180px
 
   li
     font-size 4.4vh
@@ -94,11 +95,12 @@ body
 
   .x
     position fixed
-    z-index 2
+    z-index 3
     font-size 20vmin
     right 3vmin
-    top -2.4vmin
+    top -5vmin
     cursor pointer
+    color black
 
     &:hover
       opacity .6
@@ -245,7 +247,6 @@ body
 
   .debug
     font-size 1.6rem
-    display none
 
 
 #first-time
@@ -347,3 +348,11 @@ body
 *::-webkit-media-controls-start-playback-button
   display none !important
   -webkit-appearance none
+
+.lang-select
+  z-index 3
+  position absolute
+  margin auto
+  top 20px
+  left 0
+  right 0
