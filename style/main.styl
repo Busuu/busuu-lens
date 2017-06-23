@@ -107,12 +107,14 @@ body
 #main-view
   text-align center
   position absolute
-  top 7vh
+  top 10vh
   bottom 45vmin
-  left 0
+  left 20 !important
   right 0
-  width 100vw
+  width 88vw
   height 60vh
+  font-family verdana
+  color #2E8CCC
   transition opacity .2s ease-out
 
   &.faded
@@ -208,8 +210,8 @@ body
 
 @media (min-width 800px)
   #target
-    left 50%
-    top 40%
+    left 55%
+    top 50%
     border 2px dashed rgba(255, 255, 255, .5)
     transform translate3d(-50%, -50%, 0)
     display block
@@ -235,13 +237,15 @@ body
     padding 10px !important
     width 10vmin !important
     height 10vmin !important
-    bottom 10vmin !important
+    bottom 3vmin !important
+    left 100vmin !important
 
   .x
     font-size 110px
 
   .debug
     font-size 1.6rem
+    display none
 
 
 #first-time
@@ -253,8 +257,12 @@ body
   top 45%
   width 100%
   font-size 4.5vmin
-  font-weight normal
+  font-weight bold
+  font-family verdana
+  color #2E8CCC
   transform translateY(-50%)
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: white;
 
 
 @media (max-height 600px)
